@@ -1,11 +1,10 @@
-from flask_ngrok import run_with_ngrok
-from flask import Flask, render_template, request
+import base64
+from io import BytesIO
 
 import torch
 from diffusers import StableDiffusionPipeline
-
-import base64
-from io import BytesIO
+from flask import Flask, render_template, request
+from flask_ngrok import run_with_ngrok
 
 # Load model
 pipe = StableDiffusionPipeline.from_pretrained(
